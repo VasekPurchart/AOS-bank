@@ -131,6 +131,20 @@
                         <id>wsimport-generate-clearingcenter</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>exchangerates.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/exchangerates.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/exchangerates.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-exchangerates</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>

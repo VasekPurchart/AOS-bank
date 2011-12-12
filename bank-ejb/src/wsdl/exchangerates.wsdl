@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ExchangeRatesImplService" targetNamespace="http://exchangerates.sw.aos.support.felk.cvut.cz/" xmlns:ns1="http://support.felk.cvut.cz/aos/sw/ExchangeRates/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://exchangerates.sw.aos.support.felk.cvut.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://support.felk.cvut.cz/aos/sw/ExchangeRates?wsdl=ExchangeRates.wsdl" namespace="http://support.felk.cvut.cz/aos/sw/ExchangeRates/">
+    </wsdl:import>
+  <wsdl:binding name="ExchangeRatesImplServiceSoapBinding" type="ns1:ExchangeRates">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getExchangeRate">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ExchangeRates/getExchangeRate" style="document"/>
+      <wsdl:input name="getExchangeRate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getExchangeRateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedCurrencyFault">
+        <soap:fault name="UnsupportedCurrencyFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSupportedCurrencies">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ExchangeRates/getSupportedCurrencies" style="document"/>
+      <wsdl:input name="getSupportedCurrencies">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSupportedCurrenciesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExchangeRatesImplService">
+    <wsdl:port binding="tns:ExchangeRatesImplServiceSoapBinding" name="ExchangeRatesImplPort">
+      <soap:address location="http://support.felk.cvut.cz/aos/sw/ExchangeRates"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

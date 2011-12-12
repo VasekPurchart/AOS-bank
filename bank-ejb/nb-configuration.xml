@@ -14,5 +14,6 @@ That way multiple projects can share the same settings (useful for formatting ru
 Any value defined here will override the pom.xml file value but is only applicable to the current project.
 -->
         <org-netbeans-modules-maven-jaxws._5f_C_5f_clearingcenter>file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/clearingcenter.wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_clearingcenter>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_exchangerates>file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/exchangerates.wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_exchangerates>
     </properties>
 </project-shared-configuration>
