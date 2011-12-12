@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ClearingCenterImplService" targetNamespace="http://clearingcenter.sw.aos.support.felk.cvut.cz/" xmlns:ns1="http://support.felk.cvut.cz/aos/sw/ClearingCenter/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://clearingcenter.sw.aos.support.felk.cvut.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://support.felk.cvut.cz/aos/sw/ClearingCenter?wsdl=ClearingCenter.wsdl" namespace="http://support.felk.cvut.cz/aos/sw/ClearingCenter/">
+    </wsdl:import>
+  <wsdl:binding name="ClearingCenterImplServiceSoapBinding" type="ns1:ClearingCenter">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPaymentsResult">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ClearingCenter/getPaymentsResult" style="document"/>
+      <wsdl:input name="getPaymentsResult">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPaymentsResultResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="GetPaymentsResultFault_Exception">
+        <soap:fault name="GetPaymentsResultFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setPaymentsResult">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ClearingCenter/setPaymentsResult" style="document"/>
+      <wsdl:input name="setPaymentsResult">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setPaymentsResultResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SetPaymentsResultFault_Exception">
+        <soap:fault name="SetPaymentsResultFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="fetchPayments">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ClearingCenter/fetchPayments" style="document"/>
+      <wsdl:input name="fetchPayments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="fetchPaymentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FetchPaymentsFault_Exception">
+        <soap:fault name="FetchPaymentsFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendPayments">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ClearingCenter/sendPayments" style="document"/>
+      <wsdl:input name="sendPayments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendPaymentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SendPaymentsFault_Exception">
+        <soap:fault name="SendPaymentsFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://support.felk.cvut.cz/aos/sw/ClearingCenter/register" style="document"/>
+      <wsdl:input name="register">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RegisterFault_Exception">
+        <soap:fault name="RegisterFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClearingCenterImplService">
+    <wsdl:port binding="tns:ClearingCenterImplServiceSoapBinding" name="ClearingCenterImplPort">
+      <soap:address location="http://support.felk.cvut.cz/aos/sw/ClearingCenter"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

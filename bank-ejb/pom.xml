@@ -116,7 +116,22 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>1.10</version>
-                <executions></executions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>clearingcenter.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/clearingcenter.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/clearingcenter.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-clearingcenter</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>javax.xml</groupId>
