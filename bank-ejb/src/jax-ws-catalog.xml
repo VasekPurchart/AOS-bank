@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/clearingcenter.wsdl" uri="wsdl/clearingcenter.wsdl"/>
     <system systemId="file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/exchangerates.wsdl" uri="wsdl/exchangerates.wsdl"/>
+    <system systemId="http://localhost:8080/ScoringFacadeService/ScoringFacade?wsdl" uri="wsdl/localhost_8080/ScoringFacadeService/ScoringFacade.wsdl"/>
+    <system systemId="http://localhost:8080/ScoringFacadeService/ScoringFacade?xsd=1" uri="wsdl/localhost_8080/ScoringFacadeService/ScoringFacade.xsd_1.xsd"/>
 </catalog>

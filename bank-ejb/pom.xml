@@ -145,6 +145,21 @@
                         <id>wsimport-generate-exchangerates</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/ScoringFacadeService/ScoringFacade.wsdl</wsdlFile>
+                            </wsdlFiles>
+							<packageName>cz.vasekpurchart.aos.bank.scoringadapter</packageName>
+                            <wsdlLocation>http://localhost:8080/ScoringFacadeService/ScoringFacade?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/ScoringFacade.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-ScoringFacade</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
