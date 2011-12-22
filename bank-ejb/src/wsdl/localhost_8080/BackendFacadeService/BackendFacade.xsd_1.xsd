@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://backend.bank.aos.vasekpurchart.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://backend.bank.aos.vasekpurchart.cz/">
+
+<xs:element name="InvalidAccountException" type="tns:InvalidAccountException"/>
+
+<xs:element name="LowBonityException" type="tns:LowBonityException"/>
+
+<xs:element name="NotEnoughMoneyException" type="tns:NotEnoughMoneyException"/>
+
+<xs:element name="UnsupportedCurrencyException" type="tns:UnsupportedCurrencyException"/>
+
+<xs:element name="createAccount" type="tns:createAccount"/>
+
+<xs:element name="createAccountResponse" type="tns:createAccountResponse"/>
+
+<xs:element name="deleteAccount" type="tns:deleteAccount"/>
+
+<xs:element name="deleteAccountResponse" type="tns:deleteAccountResponse"/>
+
+<xs:element name="depositMoney" type="tns:depositMoney"/>
+
+<xs:element name="depositMoneyResponse" type="tns:depositMoneyResponse"/>
+
+<xs:element name="getCurrentBalance" type="tns:getCurrentBalance"/>
+
+<xs:element name="getCurrentBalanceResponse" type="tns:getCurrentBalanceResponse"/>
+
+<xs:element name="getLoan" type="tns:getLoan"/>
+
+<xs:element name="getLoanResponse" type="tns:getLoanResponse"/>
+
+<xs:element name="payLoan" type="tns:payLoan"/>
+
+<xs:element name="payLoanResponse" type="tns:payLoanResponse"/>
+
+<xs:element name="transferMoney" type="tns:transferMoney"/>
+
+<xs:element name="transferMoneyResponse" type="tns:transferMoneyResponse"/>
+
+<xs:element name="withdrawMoney" type="tns:withdrawMoney"/>
+
+<xs:element name="withdrawMoneyResponse" type="tns:withdrawMoneyResponse"/>
+
+<xs:complexType name="getCurrentBalance">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCurrentBalanceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InvalidAccountException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UnsupportedCurrencyException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="withdrawMoney">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:decimal" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="withdrawMoneyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NotEnoughMoneyException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="payLoan">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="payLoanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAccount">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAccountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transferMoney">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transferMoneyResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="depositMoney">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:decimal" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="depositMoneyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createAccount">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createAccountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoan">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoanResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="LowBonityException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

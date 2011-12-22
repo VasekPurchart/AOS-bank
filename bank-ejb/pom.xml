@@ -180,6 +180,21 @@
                         <id>wsimport-generate-ScoringFacade</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/BackendFacadeService/BackendFacade.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>http://localhost:8080/BackendFacadeService/BackendFacade?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/BackendFacade.stale</staleFile>
+							<packageName>cz.vasekpurchart.aos.bank.backendadapter</packageName>
+                        </configuration>
+                        <id>wsimport-generate-BackendFacade</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
