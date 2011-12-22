@@ -2,10 +2,10 @@ package cz.vasekpurchart.aos.bank.backend.transfer;
 
 import cz.vasekpurchart.aos.bank.backend.UnsupportedCurrencyException;
 import cz.vasekpurchart.aos.bank.backend.account.AccountService;
-import cz.cvut.felk.support.aos.sw.clearingcenter.PaymentResult;
 import cz.vasekpurchart.aos.bank.backend.ClearingCenterAdapter;
 import cz.vasekpurchart.aos.bank.backend.account.InvalidAccountException;
 import cz.vasekpurchart.aos.bank.backend.account.NotEnoughMoneyException;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.PaymentResult;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;

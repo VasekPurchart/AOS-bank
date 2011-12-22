@@ -1,14 +1,16 @@
 package cz.vasekpurchart.aos.bank.backend;
 
-import cz.cvut.felk.support.aos.sw.clearingcenter.FetchPaymentsFaultException_Exception;
-import cz.cvut.felk.support.aos.sw.clearingcenter.GetPaymentsResultFaultException_Exception;
-import cz.cvut.felk.support.aos.sw.clearingcenter.SendPaymentsFaultException_Exception;
-import cz.cvut.felk.support.aos.sw.clearingcenter.SetPaymentsResultFaultException_Exception;
+
 import cz.vasekpurchart.aos.bank.backend.transfer.Transfer;
-import cz.cvut.felk.support.aos.sw.clearingcenter.ClearingCenter;
-import cz.cvut.felk.support.aos.sw.clearingcenter.ClearingCenterImplService;
-import cz.cvut.felk.support.aos.sw.clearingcenter.Payment;
-import cz.cvut.felk.support.aos.sw.clearingcenter.PaymentResult;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.ClearingCenterProxyService;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.ClearingCenterProxyWS;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.FetchPaymentsException_Exception;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.GetPaymentsResultException_Exception;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.Payment;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.PaymentResult;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.RegisterException_Exception;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.SendPaymentsException_Exception;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.SetPaymentsResultException_Exception;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,11 +24,11 @@ import java.util.logging.Logger;
  */
 public class ClearingCenterAdapter {
 
-	private ClearingCenter clearingCenter;
+	private ClearingCenterProxyWS clearingCenter;
 
 	public ClearingCenterAdapter() {
-		ClearingCenterImplService service = new ClearingCenterImplService();
-		clearingCenter = service.getClearingCenterImplPort();
+		ClearingCenterProxyService service = new ClearingCenterProxyService();
+		clearingCenter = service.getClearingCenterProxyPort();
 	}
 
 	public List<Long> sendPayments(String bankKey, List<Transfer> transferList) {
@@ -45,7 +47,7 @@ public class ClearingCenterAdapter {
 		List<Long> ids = new ArrayList<Long>();
 		try {
 			ids = clearingCenter.sendPayments(bankKey, payments);
-		} catch (SendPaymentsFaultException_Exception ex) {
+		} catch (SendPaymentsException_Exception ex) {
 			Logger.getLogger(ClearingCenterAdapter.class.getName()).log(Level.SEVERE, null, ex);
 		}
 
@@ -68,7 +70,7 @@ public class ClearingCenterAdapter {
 				transfer.setType(Transfer.Type.CREDIT);
 				transfers.add(transfer);
 			}
-		} catch (FetchPaymentsFaultException_Exception ex) {
+		} catch (FetchPaymentsException_Exception ex) {
 			Logger.getLogger(ClearingCenterAdapter.class.getName()).log(Level.SEVERE, null, ex);
 		}
 
@@ -90,7 +92,7 @@ public class ClearingCenterAdapter {
 		}
 		try {
 			clearingCenter.setPaymentsResult(bankKey, paymentsWithResults);
-		} catch (SetPaymentsResultFaultException_Exception ex) {
+		} catch (SetPaymentsResultException_Exception ex) {
 			Logger.getLogger(ClearingCenterAdapter.class.getName()).log(Level.SEVERE, null, ex);
 			// TODO resend results
 		}
@@ -110,7 +112,7 @@ public class ClearingCenterAdapter {
 			for (int i = 0; i < payments.size(); i++) {
 				results.put(ids.get(i), payments.get(i).getPaymentResult());
 			}
-		} catch (GetPaymentsResultFaultException_Exception ex) {
+		} catch (GetPaymentsResultException_Exception ex) {
 			Logger.getLogger(ClearingCenterAdapter.class.getName()).log(Level.SEVERE, null, ex);
 		}
 
@@ -120,7 +122,7 @@ public class ClearingCenterAdapter {
 	public String register(String bankCode) {
 		try {
 			return clearingCenter.register(bankCode);
-		} catch (Exception ex) {
+		} catch (RegisterException_Exception ex) {
 			throw new IllegalStateException();
 		}
 

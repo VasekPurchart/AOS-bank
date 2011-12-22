@@ -1,7 +1,7 @@
 package cz.vasekpurchart.aos.bank.backend.transfer;
 
-import cz.cvut.felk.support.aos.sw.clearingcenter.PaymentResult;
 import cz.vasekpurchart.aos.bank.backend.model.SimpleEntity;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.PaymentResult;
 import java.math.BigDecimal;
 import javax.persistence.Entity;
 

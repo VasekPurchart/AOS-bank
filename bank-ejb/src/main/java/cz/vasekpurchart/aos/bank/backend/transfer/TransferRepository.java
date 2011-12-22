@@ -1,7 +1,8 @@
 package cz.vasekpurchart.aos.bank.backend.transfer;
 
-import cz.cvut.felk.support.aos.sw.clearingcenter.PaymentResult;
+
 import cz.vasekpurchart.aos.bank.backend.model.AbstractRepository;
+import cz.vasekpurchart.aos.bank.clearingcenterproxyadapter.PaymentResult;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
