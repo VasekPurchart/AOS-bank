@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://clearingcenterproxy.bank.aos.vasekpurchart.cz/" xmlns:ns1="http://support.felk.cvut.cz/aos/sw/ClearingCenter/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://clearingcenterproxy.bank.aos.vasekpurchart.cz/">
+
+<xs:import namespace="http://support.felk.cvut.cz/aos/sw/ClearingCenter/" schemaLocation="http://localhost:8080/ClearingCenterProxyService/ClearingCenterProxy?xsd=1"/>
+
+<xs:element name="FetchPaymentsException" type="tns:FetchPaymentsException"/>
+
+<xs:element name="GetPaymentsResultException" type="tns:GetPaymentsResultException"/>
+
+<xs:element name="RegisterException" type="tns:RegisterException"/>
+
+<xs:element name="SendPaymentsException" type="tns:SendPaymentsException"/>
+
+<xs:element name="SetPaymentsResultException" type="tns:SetPaymentsResultException"/>
+
+<xs:element name="fetchPayments" type="tns:fetchPayments"/>
+
+<xs:element name="fetchPaymentsResponse" type="tns:fetchPaymentsResponse"/>
+
+<xs:element name="getPaymentsResult" type="tns:getPaymentsResult"/>
+
+<xs:element name="getPaymentsResultResponse" type="tns:getPaymentsResultResponse"/>
+
+<xs:element name="register" type="tns:register"/>
+
+<xs:element name="registerResponse" type="tns:registerResponse"/>
+
+<xs:element name="sendPayments" type="tns:sendPayments"/>
+
+<xs:element name="sendPaymentsResponse" type="tns:sendPaymentsResponse"/>
+
+<xs:element name="setPaymentsResult" type="tns:setPaymentsResult"/>
+
+<xs:element name="setPaymentsResultResponse" type="tns:setPaymentsResultResponse"/>
+
+<xs:complexType name="sendPayments">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="ns1:payment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendPaymentsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SendPaymentsException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPaymentsResult">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPaymentsResultResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:payment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetPaymentsResultException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="register">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPaymentsResult">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="ns1:payment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPaymentsResultResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="SetPaymentsResultException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fetchPayments">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fetchPaymentsResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:payment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FetchPaymentsException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

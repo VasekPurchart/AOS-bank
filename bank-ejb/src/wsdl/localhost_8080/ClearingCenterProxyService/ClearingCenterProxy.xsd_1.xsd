@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://support.felk.cvut.cz/aos/sw/ClearingCenter/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://support.felk.cvut.cz/aos/sw/ClearingCenter/">
+
+<xs:complexType name="payment">
+<xs:sequence>
+<xs:element name="accountNumber" type="xs:int"/>
+<xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+<xs:element name="bankCode" type="xs:string" minOccurs="0"/>
+<xs:element name="currency" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="paymentResult" type="tns:paymentResult" minOccurs="0"/>
+<xs:element name="senderAccountNumber" type="xs:int"/>
+<xs:element name="senderBankCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="paymentResult">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NOTSET"/>
+<xs:enumeration value="OK"/>
+<xs:enumeration value="WAITING_FOR_TARGET_BANK_PROCESSING"/>
+<xs:enumeration value="NO_SUCH_TARGET_ACCOUNT_ERROR"/>
+<xs:enumeration value="UNKNOWN_ERROR"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

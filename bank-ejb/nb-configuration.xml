@@ -18,5 +18,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_ScoringFacade>http://localhost:8080/ScoringFacadeService/ScoringFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ScoringFacade>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_BackendFacade>http://localhost:8080/BackendFacadeService/BackendFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_BackendFacade>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_FileServerFacade>http://localhost:8080/FileServerFacadeService/FileServerFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_FileServerFacade>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_ClearingCenterProxy>http://localhost:8080/ClearingCenterProxyService/ClearingCenterProxy?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ClearingCenterProxy>
     </properties>
 </project-shared-configuration>
