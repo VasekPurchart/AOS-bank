@@ -17,6 +17,9 @@ public class ClientFacade implements ClientWS {
 	@Inject
 	private BackendAdapter backend;
 
+	@Inject
+	private FileServerAdapter fileServer;
+
 	@Override
 	public int setUpAccount(String name, String currency) throws UnsupportedCurrencyException {
 		return backend.createAccount(name, currency);
@@ -59,7 +62,7 @@ public class ClientFacade implements ClientWS {
 
 	@Override
 	public DataHandler getAccountStatement(int accountNumber) throws InvalidAccountException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return fileServer.getAccountStatement(accountNumber);
 	}
 
 }
