@@ -17,5 +17,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_exchangerates>file:/home/vasek/dev/projects/AOS/bank/bank-ejb/src/wsdl/exchangerates.wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_exchangerates>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_ScoringFacade>http://localhost:8080/ScoringFacadeService/ScoringFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ScoringFacade>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_BackendFacade>http://localhost:8080/BackendFacadeService/BackendFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_BackendFacade>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_FileServerFacade>http://localhost:8080/FileServerFacadeService/FileServerFacade?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_FileServerFacade>
     </properties>
 </project-shared-configuration>

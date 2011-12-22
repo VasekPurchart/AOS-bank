@@ -7,4 +7,6 @@
     <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?wsdl" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.wsdl"/>
     <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?xsd=1" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?xsd=2" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/FileServerFacadeService/FileServerFacade?wsdl" uri="wsdl/localhost_8080/FileServerFacadeService/FileServerFacade.wsdl"/>
+    <system systemId="http://localhost:8080/FileServerFacadeService/FileServerFacade?xsd=1" uri="wsdl/localhost_8080/FileServerFacadeService/FileServerFacade.xsd_1.xsd"/>
 </catalog>

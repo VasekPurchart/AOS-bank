@@ -206,6 +206,21 @@
                         <id>wsimport-generate-BackendFacade</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/FileServerFacadeService/FileServerFacade.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>http://localhost:8080/FileServerFacadeService/FileServerFacade?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/FileServerFacade.stale</staleFile>
+							<packageName>cz.vasekpurchart.aos.bank.fileserveradapter</packageName>
+                        </configuration>
+                        <id>wsimport-generate-FileServerFacade</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
