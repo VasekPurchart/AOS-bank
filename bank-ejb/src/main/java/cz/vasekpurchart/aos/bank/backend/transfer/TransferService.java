@@ -108,4 +108,8 @@ public class TransferService {
 		}
 	}
 
+	public List<Transfer> getTransfers(int accountNumber) {
+		return transferRepository.findTransfers(accountNumber);
+	}
+
 }

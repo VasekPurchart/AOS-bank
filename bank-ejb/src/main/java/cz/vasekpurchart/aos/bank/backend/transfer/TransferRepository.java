@@ -32,4 +32,11 @@ public class TransferRepository extends AbstractRepository<Transfer> {
 		return q.getResultList();
 	}
 
+	public List<Transfer> findTransfers(int accountNumber) {
+		Query q = em.createQuery("SELECT t FROM Transfer t WHERE t.paymentResult = :paymentResult AND t.accountNumber = :accountNumber");
+		q.setParameter("paymentResult", PaymentResult.OK);
+		q.setParameter("accountNumber", accountNumber);
+		return q.getResultList();
+	}
+
 }

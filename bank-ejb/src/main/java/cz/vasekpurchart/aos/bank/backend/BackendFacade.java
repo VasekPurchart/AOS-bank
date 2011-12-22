@@ -3,9 +3,11 @@ package cz.vasekpurchart.aos.bank.backend;
 import cz.vasekpurchart.aos.bank.backend.account.InvalidAccountException;
 import cz.vasekpurchart.aos.bank.backend.account.LowBonityException;
 import cz.vasekpurchart.aos.bank.backend.account.NotEnoughMoneyException;
+import cz.vasekpurchart.aos.bank.backend.transfer.Transfer;
 import cz.vasekpurchart.aos.bank.backend.transfer.TransferService;
 import cz.vasekpurchart.aos.bank.backend.account.AccountService;
 import java.math.BigDecimal;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.jws.WebService;
@@ -62,6 +64,11 @@ public class BackendFacade implements BackendWS {
 	@Override
 	public BigDecimal payLoan(int accountNumber, BigDecimal amount) throws InvalidAccountException {
 		return accountService.payLoan(accountNumber, amount);
+	}
+
+	@Override
+	public List<Transfer> getTransfers(int accountNumber) throws InvalidAccountException {
+		return transferService.getTransfers(accountNumber);
 	}
 
 }

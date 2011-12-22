@@ -3,7 +3,9 @@ package cz.vasekpurchart.aos.bank.backend;
 import cz.vasekpurchart.aos.bank.backend.account.InvalidAccountException;
 import cz.vasekpurchart.aos.bank.backend.account.LowBonityException;
 import cz.vasekpurchart.aos.bank.backend.account.NotEnoughMoneyException;
+import cz.vasekpurchart.aos.bank.backend.transfer.Transfer;
 import java.math.BigDecimal;
+import java.util.List;
 import javax.jws.WebService;
 
 /**
@@ -28,5 +30,7 @@ public interface BackendWS {
 	public void getLoan(int accountNumber, BigDecimal amount) throws InvalidAccountException, LowBonityException;
 
 	public BigDecimal payLoan(int accountNumber, BigDecimal amount) throws InvalidAccountException;
+
+	public List<Transfer> getTransfers(int accountNumber) throws InvalidAccountException;
 
 }

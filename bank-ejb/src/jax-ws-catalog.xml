@@ -6,4 +6,5 @@
     <system systemId="http://localhost:8080/ScoringFacadeService/ScoringFacade?xsd=1" uri="wsdl/localhost_8080/ScoringFacadeService/ScoringFacade.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?wsdl" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.wsdl"/>
     <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?xsd=1" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/BackendFacadeService/BackendFacade?xsd=2" uri="wsdl/localhost_8080/BackendFacadeService/BackendFacade.xsd_2.xsd"/>
 </catalog>
