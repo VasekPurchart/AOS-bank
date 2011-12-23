@@ -63,7 +63,6 @@ public class TransferService {
 		}
 	}
 
-	// TODO schedule
 	public void processOutgoingTransfers() {
 		List<Transfer> transferList = transferRepository.findTransfersToSend();
 		List<Long> ids = clearingCenter.sendPayments(bankKey, transferList);
@@ -72,7 +71,6 @@ public class TransferService {
 		}
 	}
 
-	// TODO schedule
 	public void processSentTransfers() {
 		List<Transfer> transferList = transferRepository.findSentTransfers();
 		Map<Long, PaymentResult> results = clearingCenter.getPaymentResults(bankKey, transferList);
@@ -91,7 +89,6 @@ public class TransferService {
 		}
 	}
 
-	// TODO schedule
 	public void processIncommingTransfers() {
 		List<Transfer> transferList = clearingCenter.fetchPayments(bankKey);
 		for (Transfer transfer : transferList) {
