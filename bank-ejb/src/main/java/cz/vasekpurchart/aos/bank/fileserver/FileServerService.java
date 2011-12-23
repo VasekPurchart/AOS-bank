@@ -1,9 +1,12 @@
 package cz.vasekpurchart.aos.bank.fileserver;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import cz.vasekpurchart.aos.bank.backendadapter.Transfer;
@@ -46,29 +49,29 @@ public class FileServerService {
         PdfWriter.getInstance(document, outputStream);
         document.open();
 
-		PdfPTable table = new PdfPTable(3);
-		PdfPCell cell;
-		cell = new PdfPCell(new Phrase("Account statement for account nr." + accountNumber));
-		cell.setColspan(3);
-		table.addCell(cell);
-
+		Paragraph p = new Paragraph("Account statement for account nr." + accountNumber, new Font(FontFamily.HELVETICA, 20));
+		document.add(p);
 		if (!transferList.isEmpty()) {
+			PdfPTable table = new PdfPTable(3);
+			table.setSpacingBefore(10);
 			table.addCell("variable symbol");
 			table.addCell("from/to account");
 			table.addCell("amount");
 			for (Transfer transfer : transferList) {
-				table.addCell(transfer.getUniversalId() + "");
-				table.addCell(transfer.getRemoteAccountNumber() + "/" + transfer.getRemoteBankCode());
+				Font f = new Font();
+				if (transfer.getType() == Type.DEBET) f.setColor(BaseColor.RED);
+				String id = transfer.getId() + "";
+				if (transfer.getUniversalId() != null) id = transfer.getUniversalId() + "/" + id;
+				table.addCell(new Phrase(id, f));
+				table.addCell(new Phrase(transfer.getRemoteAccountNumber() + "/" + transfer.getRemoteBankCode(), f));
 				String amount = transfer.getAmount() + "(" + transfer.getCurrency() + ")";
 				if (transfer.getType() == Type.DEBET) amount = "-" + amount;
-				table.addCell(amount);
+				table.addCell(new Phrase(amount, f));
 			}
+			document.add(table);
 		} else {
-			cell = new PdfPCell(new Phrase("No statements to show"));
-			cell.setColspan(3);
-			table.addCell(cell);
+			document.add(new Paragraph("No statements to show", new Font(FontFamily.TIMES_ROMAN)));
 		}
-		document.add(table);
 		document.close();
 
 		return outputStream;
